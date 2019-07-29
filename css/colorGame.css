@@ -60,6 +60,8 @@ img {
 
 #message {
     display: inline-block;
+    margin-left: 75px;
+    margin-right: 75px;
     text-align: center;
     vertical-align: middle;
     font-weight: 300;
