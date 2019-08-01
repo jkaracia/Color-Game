@@ -1,7 +1,7 @@
-let numSquares = 9;
+let numCircles = 9;
 let colors = [];
 let pickedColor;
-let squares = document.querySelectorAll(".square");
+let circles = document.querySelectorAll(".circle");
 let colorDisplay = document.getElementById("colorDisplay");
 let messageDisplay = document.getElementById("message");
 let h1 = document.getElementById("header");
@@ -12,7 +12,7 @@ init();
 
 function init() {
     setupModeButtons();
-    setupSquares();
+    setupCircles();
     reset();
 }
 
@@ -24,20 +24,20 @@ function setupModeButtons() {
             modeButtons[2].classList.remove("selected")
             this.classList.add("selected");
             if (this.textContent === "Easy") {
-                numSquares = 3;
+                numCircles = 3;
             } else if (this.textContent === "Hard") {
-                numSquares = 6;
+                numCircles = 6;
             } else {
-                numSquares = 9;
+                numCircles = 9;
             }
             reset();
         });
     }
 }
         
-function setupSquares() {
-    for (let i = 0; i < squares.length; i++) {
-        squares[i].addEventListener("click", function() {
+function setupCircles() {
+    for (let i = 0; i < circles.length; i++) {
+        circles[i].addEventListener("click", function() {
            let clickedColor = this.style.backgroundColor;
            if (clickedColor === pickedColor) {
                messageDisplay.textContent = "Correct!";
@@ -53,18 +53,18 @@ function setupSquares() {
 }
 
 function reset() {
-    colors = generateRandomColors(numSquares);
+    colors = generateRandomColors(numCircles);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
     resetButton.textContent = "New Colors";
     messageDisplay.textContent = "";
 
-    for (let i = 0; i < squares.length; i++) {
+    for (let i = 0; i < circles.length; i++) {
         if (colors[i]) {
-            squares[i].style.display = "block";
-            squares[i].style.backgroundColor = colors[i];
+            circles[i].style.display = "block";
+            circles[i].style.backgroundColor = colors[i];
         } else {
-            squares[i].style.display = "none";
+            circles[i].style.display = "none";
         }
     }
     h1.style.backgroundColor = "white";
@@ -75,8 +75,8 @@ resetButton.addEventListener("click", function() {
 })
 
 function changeColors(color) {
-    for (let i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = color;
+    for (let i = 0; i < circles.length; i++) {
+        circles[i].style.backgroundColor = color;
     }
 }
 

@@ -19,7 +19,7 @@ img {
     font-weight: 700;
 }
 
-.square {
+.circle {
     width: 30%;
     padding-bottom: 30%;
     float: left;
@@ -28,7 +28,7 @@ img {
     transition: background 0.6s;
 }
 
-.square:hover {
+.circle:hover {
     transform: scale(1.1);
 }
 
@@ -73,6 +73,7 @@ img {
 }
 
 #nav {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: baseline;
